@@ -4,6 +4,7 @@ import ast
 import os
 from parsers import python_parser
 from parsers import javascript_parser 
+from parsers import java_parser 
 
 import pickle
 
@@ -39,7 +40,8 @@ class gitpy:
         if lang == "js":
             function_data = javascript_parser.get_js_function_data(self.path)
         if lang == "java":
-            raise NotImplementedError("Not yet...")
+            function_data = java_parser.get_java_function_data(self.path)
+            #raise NotImplementedError("Not yet...")
         if lang == "cs":
             raise NotImplementedError("Not yet...")
 

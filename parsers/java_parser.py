@@ -1,4 +1,5 @@
 import javalang
+from pathlib import Path
 
 def get_method_start_end(tree, method_node):
     startpos  = None
@@ -46,21 +47,24 @@ def get_method_text(codelines, startpos, endpos, startline, endline, last_endlin
 
         return meth_text, (startline_index + 1), (last_endline_index + 1), last_endline_index
 
-def get_java_function_data():
-    target_file = "./Main.java" # Add the path to your file
-    with open(target_file, 'r') as r:
-        codelines = r.readlines()
-        code_text = ''.join(codelines)
+def get_java_function_data(project_path):
+    function_data = {}
+    for path in Path(project_path).rglob('*.java'):
+        ps = str(path)
+        with open(path, 'r') as r:
+            codelines = r.readlines()
+            code_text = ''.join(codelines)
 
-    lex = None
-    tree = javalang.parse.parse(code_text)    
-    methods = {}
-    for _, method_node in tree.filter(javalang.tree.MethodDeclaration):
-        startpos, endpos, startline, endline = get_method_start_end(method_node)
-        method_text, startline, endline, lex = get_method_text(codelines, startpos, endpos, startline, endline, lex)
-        methods[method_node.name] = method_text
+        lex = None
+        try:
+            tree = javalang.parse.parse(code_text)    
+        except:
+            continue
+        methods = {}
+        for _, method_node in tree.filter(javalang.tree.MethodDeclaration):
+            startpos, endpos, startline, endline = get_method_start_end(tree, method_node)
+            method_text, startline, endline, lex = get_method_text(codelines, startpos, endpos, startline, endline, lex)
+            methods[method_node.name] = method_text
 
-        print("--- ### ---")
-        print(method_text)
-        print("Line range: ", startline, " - ", endline)
-        print("--- ### ---")
+            function_data[f'{method_node.name}'] = {"file_path": ps, "line_number": startline, "function_string":method_text}
+    return function_data
