@@ -29,9 +29,6 @@ class create_summary_tour:
         #most_imported_modules= self.stats_dict['modules']
         #most_imported_files = self.stats_dict['files'] 
         #most_imported_functions = self.stats_dict['most_imported_functions']
-        #function_and_date = self.stats_dict['function_and_date']
-
-        #function_data = self.stats_dict['function_data']
         function_data = self.stats_dict
         summarized_count = 0
         filecount = {}

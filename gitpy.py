@@ -3,7 +3,7 @@ import time
 import ast
 import os
 from parsers import python_parser
-from parsers.javascript_parser import get_js_function_data
+from parsers import javascript_parser 
 
 import pickle
 
@@ -37,7 +37,7 @@ class gitpy:
         if lang == "py":
             function_data = python_parser.get_py_function_data(self.path)
         if lang == "js":
-            raise NotImplementedError("Not yet...")
+            function_data = javascript_parser.get_js_function_data(self.path)
         if lang == "java":
             raise NotImplementedError("Not yet...")
         if lang == "cs":
