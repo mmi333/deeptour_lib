@@ -1,4 +1,5 @@
 import ast
+import astunparse 
 from pathlib import Path
 from collections import namedtuple
 from collections import OrderedDict
@@ -29,9 +30,9 @@ def get_py_function_data(project_path):
                             if "def" in line and node.name in line:
                                 line_number = num
 
-                        function_string = ast.unparse(node)
-                        #if len(function_string) > 512:
-                        #    continue
+                        function_string = astunparse.unparse(node)
+                        if len(function_string) > 512:
+                           continue
                         function_data[f'{node.name}'] = {"file_path": ps, "line_number": line_number, "function_string":function_string}
         return function_data
 

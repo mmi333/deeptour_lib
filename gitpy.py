@@ -28,22 +28,22 @@ class gitpy:
 
         return lines_and_dates
 
-    def get_function_data(self, lang):
+    def argmax(self, iterable):
+        return max(enumerate(iterable), key=lambda x: x[1])[0]
 
-        if os.path.exists(self.path.split('/')[-1] + ".pkl"):
-            function_data = pickle.loads(self.path.split('/')[-1] + ".pkl")
-            return function_data
+    def get_function_data(self):
 
 
-        if lang == "py":
-            function_data = python_parser.get_py_function_data(self.path)
-        if lang == "js":
-            function_data = javascript_parser.get_js_function_data(self.path)
-        if lang == "java":
-            function_data = java_parser.get_java_function_data(self.path)
-            #raise NotImplementedError("Not yet...")
-        if lang == "cs":
-            raise NotImplementedError("Not yet...")
+
+        py_function_data = python_parser.get_py_function_data(self.path)
+        js_function_data = javascript_parser.get_js_function_data(self.path)
+        java_function_data = java_parser.get_java_function_data(self.path)
+        function_data_list = [py_function_data, js_function_data, java_function_data]
+        function_data_list_ind = self.argmax([len(x) for x in function_data_list])
+        lang = ["py", "js", "java"][function_data_list_ind]
+        function_data = function_data_list[function_data_list_ind]
+        print("Detected language: " + lang)
+
 
         file_function = {}
         for function, data in function_data.items():
@@ -57,12 +57,10 @@ class gitpy:
             for function in function_list:
                 data = function_data[function]
                 data["function_date"] = lines_and_dates[int(data["line_number"])]
-            
-        pickle.dumps(self.path.split('/')[-1] + ".pkl")
-        return function_data
+        return function_data, lang
 
 
-def get_import_stats(self, lang):
-    if lang == "py":
-        most_imported_modules, most_imported_files, most_imported_functions = python_parser.get_import_stats(self.path)
-    return most_imported_modules, most_imported_files, most_imported_functions
+    def get_import_stats(self, lang):
+        if lang == "py":
+            most_imported_modules, most_imported_files, most_imported_functions = python_parser.get_import_stats(self.path)
+        return most_imported_modules, most_imported_files, most_imported_functions

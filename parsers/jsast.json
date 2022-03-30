@@ -1,0 +1,197 @@
+{
+    "type": "FunctionDeclaration",
+    "expression": false,
+    "isAsync": false,
+    "id": {
+        "type": "Identifier",
+        "name": "assertIsArchived"
+    },
+    "params": [
+        {
+            "type": "Identifier",
+            "name": "exp"
+        }
+    ],
+    "body": {
+        "type": "BlockStatement",
+        "body": [
+            {
+                "type": "ExpressionStatement",
+                "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                            "type": "CallExpression",
+                            "callee": {
+                                "type": "Identifier",
+                                "name": "expect"
+                            },
+                            "arguments": [
+                                {
+                                    "type": "MemberExpression",
+                                    "computed": false,
+                                    "object": {
+                                        "type": "MemberExpression",
+                                        "computed": false,
+                                        "object": {
+                                            "type": "Identifier",
+                                            "name": "exp"
+                                        },
+                                        "property": {
+                                            "type": "Identifier",
+                                            "name": "constructor"
+                                        }
+                                    },
+                                    "property": {
+                                        "type": "Identifier",
+                                        "name": "name"
+                                    }
+                                }
+                            ]
+                        },
+                        "property": {
+                            "type": "Identifier",
+                            "name": "toEqual"
+                        }
+                    },
+                    "arguments": [
+                        {
+                            "type": "Literal",
+                            "value": "PropertyComparisonExp",
+                            "raw": "\"PropertyComparisonExp\""
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "ExpressionStatement",
+                "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                            "type": "CallExpression",
+                            "callee": {
+                                "type": "Identifier",
+                                "name": "expect"
+                            },
+                            "arguments": [
+                                {
+                                    "type": "MemberExpression",
+                                    "computed": false,
+                                    "object": {
+                                        "type": "Identifier",
+                                        "name": "exp"
+                                    },
+                                    "property": {
+                                        "type": "Identifier",
+                                        "name": "propertyName"
+                                    }
+                                }
+                            ]
+                        },
+                        "property": {
+                            "type": "Identifier",
+                            "name": "toEqual"
+                        }
+                    },
+                    "arguments": [
+                        {
+                            "type": "Literal",
+                            "value": "isArchived",
+                            "raw": "\"isArchived\""
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "ExpressionStatement",
+                "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                            "type": "CallExpression",
+                            "callee": {
+                                "type": "Identifier",
+                                "name": "expect"
+                            },
+                            "arguments": [
+                                {
+                                    "type": "MemberExpression",
+                                    "computed": false,
+                                    "object": {
+                                        "type": "Identifier",
+                                        "name": "exp"
+                                    },
+                                    "property": {
+                                        "type": "Identifier",
+                                        "name": "operator"
+                                    }
+                                }
+                            ]
+                        },
+                        "property": {
+                            "type": "Identifier",
+                            "name": "toEqual"
+                        }
+                    },
+                    "arguments": [
+                        {
+                            "type": "Literal",
+                            "value": "=",
+                            "raw": "\"=\""
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "ExpressionStatement",
+                "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                            "type": "CallExpression",
+                            "callee": {
+                                "type": "Identifier",
+                                "name": "expect"
+                            },
+                            "arguments": [
+                                {
+                                    "type": "MemberExpression",
+                                    "computed": false,
+                                    "object": {
+                                        "type": "Identifier",
+                                        "name": "exp"
+                                    },
+                                    "property": {
+                                        "type": "Identifier",
+                                        "name": "comparedValue"
+                                    }
+                                }
+                            ]
+                        },
+                        "property": {
+                            "type": "Identifier",
+                            "name": "toEqual"
+                        }
+                    },
+                    "arguments": [
+                        {
+                            "type": "Literal",
+                            "value": "false",
+                            "raw": "\"false\""
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "generator": false
+}

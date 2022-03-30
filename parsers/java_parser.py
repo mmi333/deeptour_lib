@@ -65,6 +65,7 @@ def get_java_function_data(project_path):
             startpos, endpos, startline, endline = get_method_start_end(tree, method_node)
             method_text, startline, endline, lex = get_method_text(codelines, startpos, endpos, startline, endline, lex)
             methods[method_node.name] = method_text
-
+            if len(method_text) > 512:
+                continue
             function_data[f'{method_node.name}'] = {"file_path": ps, "line_number": startline, "function_string":method_text}
     return function_data
