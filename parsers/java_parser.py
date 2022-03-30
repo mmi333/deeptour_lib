@@ -1,6 +1,7 @@
+#Taken from: https://github.com/c2nes/javalang/issues/49#issuecomment-915417079
+
 import javalang
 from pathlib import Path
-
 def get_method_start_end(tree, method_node):
     startpos  = None
     endpos    = None
