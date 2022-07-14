@@ -2,7 +2,7 @@
 
 Code for a project for the [DevRev hackathon](https://devpost.com/software/deeptour).
 
-Given a source repository path, it can extract functions and run different models on them like code summarization.
+Given a source repository path, it can extract functions and runs different models on them like code summarization, code refinement, etc.
 Can work on Python, Javascript, and Java code.
 
 It then saves the output in the form of a [CodeTour](https://github.com/microsoft/codetour) to generate custom AI-made tours for any project.
