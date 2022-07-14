@@ -1,6 +1,6 @@
 # deeptour_lib
 
-Code for a project for the [DevRev hackathon](https://devrevhack0.devpost.com/).
+Code for a project for the [DevRev hackathon](https://devpost.com/software/deeptour).
 
 Given a source repository path, it can extract functions and run different models on them like code summarization.
 Can work on Python, Javascript, and Java code.
