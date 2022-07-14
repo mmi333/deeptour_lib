@@ -1,6 +1,9 @@
 # deeptour_lib
 
-Code for a project for the (https://devrevhack0.devpost.com/)[DevRev hackathon].
+Code for a project for the [DevRev hackathon](https://devrevhack0.devpost.com/).
+
+Given a source repository path, it can extract functions and run different models on them like code summarization.
+Can work on Python, Javascript, and Java code.
 
 To run it you need to install requirements.txt and then python3 deeptour.py /project/path/here
 
