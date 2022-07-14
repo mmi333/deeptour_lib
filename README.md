@@ -1,6 +1,6 @@
 # deeptour_lib
 
-Code for a project for [https://devrevhack0.devpost.com/](DevRev hackathon).
+Code for a project for the (https://devrevhack0.devpost.com/)[DevRev hackathon].
 
 To run it you need to install requirements.txt and then python3 deeptour.py /project/path/here
 
